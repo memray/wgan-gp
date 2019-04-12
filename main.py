@@ -1,13 +1,13 @@
 import torch
 import torch.optim as optim
-from dataloaders import get_mnist_dataloaders, get_lsun_dataloader
+from dataloaders import get_mnist_dataloaders, get_lsun_dataloader, get_fashion_mnist_dataloaders
 from models import Generator, Discriminator
 from training import Trainer
 
 data_loader, _ = get_mnist_dataloaders(batch_size=64)
 img_size = (32, 32, 1)
 
-generator = Generator(img_size=img_size, latent_dim=100, dim=16)
+generator = Generator(img_size=img_size, latent_dim=128, dim=16)
 discriminator = Discriminator(img_size=img_size, dim=16)
 
 print(generator)
